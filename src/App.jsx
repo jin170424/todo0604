@@ -7,11 +7,19 @@ import Greeting from './Greeting'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [cnt, setCnt] = useState(0)
+
+  function countup() {
+    setCount(count + 1)
+    console.log("押された回数: " + (count + 1))
+  }
 
   return (
     <>
       <h1>見出しを書く</h1>
-      <Greeting name="cyber" greet="こんばんは"/>
+      <Greeting name="cyber" onclick={countup} greet="こんばんは"/>
+      {count}
+      <button >おしてね</button>
     </>
   )
 }
